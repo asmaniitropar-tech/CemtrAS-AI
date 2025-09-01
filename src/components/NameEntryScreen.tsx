@@ -192,4 +192,4 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
       </div>
     </div>
   );
-};
+ };
