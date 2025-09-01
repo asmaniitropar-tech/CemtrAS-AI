@@ -29,7 +29,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center p-6 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center p-6 relative overflow-auto py-8">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-64 h-64 border-4 border-blue-500 rounded-full animate-pulse"></div>
@@ -37,11 +37,11 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
         <div className="absolute top-1/2 right-1/4 w-32 h-32 border-4 border-purple-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="max-w-lg w-full relative z-10">
+      <div className="max-w-lg w-full relative z-10 my-auto">
         {/* Enhanced Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           {/* Enhanced Logo with your actual logo */}
-          <div className="relative mb-8">
+          <div className="relative mb-6 sm:mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full blur-2xl"></div>
             <div className="relative p-4 bg-gradient-to-br from-white to-blue-50 rounded-3xl border-2 border-blue-200 shadow-2xl w-32 h-32 mx-auto flex items-center justify-center backdrop-blur-sm">
               {/* Your actual logo image */}
