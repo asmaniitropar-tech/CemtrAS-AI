@@ -59,24 +59,24 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
   };
   
   return (
-    <div className={`flex gap-6 ${isUser ? 'flex-row-reverse' : 'flex-row'} mb-8`}>
+    <div className={`flex gap-3 md:gap-6 ${isUser ? 'flex-row-reverse' : 'flex-row'} mb-6 md:mb-8`}>
       {/* Enhanced Avatar */}
-      <div className={`flex-shrink-0 w-12 h-12 rounded-2xl flex items-center justify-center shadow-xl ${
+      <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl flex items-center justify-center shadow-xl ${
         isUser 
           ? 'bg-gradient-to-br from-blue-600 to-indigo-700' 
           : 'bg-gradient-to-br from-gray-700 to-gray-900 dark:from-gray-600 dark:to-gray-800'
       }`}>
-        {isUser ? <User size={18} className="text-white" /> : <Bot size={18} className="text-white" />}
+        {isUser ? <User size={16} className="text-white" /> : <Bot size={16} className="text-white" />}
       </div>
       
       {/* Enhanced Message Bubble */}
       <div className={`flex-1 max-w-4xl ${isUser ? 'text-right' : 'text-left'}`}>
-        <div className={`inline-block px-6 py-4 shadow-lg max-w-full backdrop-blur-sm border transition-all duration-200 hover:shadow-xl ${
+        <div className={`inline-block px-4 md:px-6 py-3 md:py-4 shadow-lg max-w-full backdrop-blur-sm border transition-all duration-200 hover:shadow-xl ${
           isUser
-            ? 'bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl rounded-br-lg border-blue-500/50'
-            : 'bg-white/90 dark:bg-gray-800/90 text-gray-900 dark:text-white border-gray-200/50 dark:border-gray-700/50 rounded-2xl rounded-bl-lg'
+            ? 'bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-xl md:rounded-2xl rounded-br-md md:rounded-br-lg border-blue-500/50'
+            : 'bg-white/90 dark:bg-gray-800/90 text-gray-900 dark:text-white border-gray-200/50 dark:border-gray-700/50 rounded-xl md:rounded-2xl rounded-bl-md md:rounded-bl-lg'
         }`}>
-          <div className="text-sm leading-relaxed">
+          <div className="text-sm md:text-base leading-relaxed">
             {isUser ? (
               <div className="space-y-3">
                 <div className="font-semibold break-words">{message.content}</div>
@@ -91,7 +91,7 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
         </div>
         
         {/* Enhanced Timestamp */}
-        <div className={`text-xs text-gray-500 dark:text-gray-400 mt-3 font-semibold flex items-center gap-2 ${isUser ? 'justify-end' : 'justify-start'}`}>
+        <div className={`text-xs text-gray-500 dark:text-gray-400 mt-2 md:mt-3 font-semibold flex items-center gap-2 ${isUser ? 'justify-end' : 'justify-start'}`}>
           <div className={`w-2 h-2 rounded-full ${isUser ? 'bg-blue-500' : 'bg-gray-500'}`}></div>
           <span>{isUser ? 'YOU' : 'CemtrAS AI'}</span>
           <span>•</span>

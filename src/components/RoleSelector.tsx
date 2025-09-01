@@ -84,12 +84,12 @@ export const RoleSelector: React.FC<RoleSelectorProps> = ({ selectedRole, onRole
           } transition-opacity duration-300`}></div>
           
           {/* Content */}
-          <div className={`relative p-4 ${
+          <div className={`relative p-3 md:p-4 ${
             selectedRole === role.value 
               ? 'text-white' 
               : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50'
           } transition-all duration-300`}>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3 md:gap-4">
               <div className={`p-2 rounded-xl shadow-lg ${
                 selectedRole === role.value 
                   ? 'bg-white/20 backdrop-blur-sm' 
@@ -103,7 +103,7 @@ export const RoleSelector: React.FC<RoleSelectorProps> = ({ selectedRole, onRole
                 } transition-colors duration-300 truncate`}>
                   {role.label}
                 </div>
-                <div className={`text-xs ${
+                <div className={`text-xs hidden md:block ${
                   selectedRole === role.value ? 'text-white/80' : 'text-gray-500 dark:text-gray-400 group-hover:text-white/80'
                 } transition-colors duration-300 truncate`}>
                   {role.description}

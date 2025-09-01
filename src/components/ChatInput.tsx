@@ -149,7 +149,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({
 
       {/* Enhanced Input Form */}
       <form onSubmit={handleSubmit} className="relative">
-        <div className="flex items-end gap-4">
+        <div className="flex items-end gap-2 md:gap-4">
           <div className="flex-1 relative">
             {/* Enhanced Textarea */}
             <textarea
@@ -162,13 +162,13 @@ export const ChatInput: React.FC<ChatInputProps> = ({
               onKeyDown={handleKeyDown}
               placeholder={placeholder}
               disabled={isLoading}
-              className="w-full px-6 py-4 pr-24 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-2 border-gray-200/50 dark:border-gray-700/50 rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-lg transition-all duration-200 hover:shadow-xl"
+              className="w-full px-4 md:px-6 py-3 md:py-4 pr-20 md:pr-24 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm border-2 border-gray-200/50 dark:border-gray-700/50 rounded-xl md:rounded-2xl resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-lg transition-all duration-200 hover:shadow-xl text-sm md:text-base"
               rows={1}
-              style={{ minHeight: '56px', maxHeight: '120px' }}
+              style={{ minHeight: '48px', maxHeight: '120px' }}
             />
             
             {/* Enhanced Control Buttons */}
-            <div className="absolute right-3 top-1/2 transform -translate-y-1/2 flex items-center gap-2">
+            <div className="absolute right-2 md:right-3 top-1/2 transform -translate-y-1/2 flex items-center gap-1 md:gap-2">
               {/* File Upload */}
               {onFileUpload && (
                 <>
@@ -184,10 +184,10 @@ export const ChatInput: React.FC<ChatInputProps> = ({
                     type="button"
                     onClick={() => fileInputRef.current?.click()}
                     disabled={isLoading}
-                    className="p-2 bg-gray-100/80 dark:bg-gray-700/80 text-gray-600 dark:text-gray-400 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm shadow-md hover:shadow-lg"
+                    className="p-1.5 md:p-2 bg-gray-100/80 dark:bg-gray-700/80 text-gray-600 dark:text-gray-400 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 rounded-lg md:rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm shadow-md hover:shadow-lg"
                     title="Upload files"
                   >
-                    <Paperclip size={16} />
+                    <Paperclip size={14} />
                   </button>
                 </>
               )}
@@ -201,11 +201,11 @@ export const ChatInput: React.FC<ChatInputProps> = ({
                   className={`p-2 rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed backdrop-blur-sm shadow-md hover:shadow-lg ${
                     isListening 
                       ? 'bg-red-100/80 text-red-600 hover:bg-red-200/80 animate-pulse' 
-                      : 'bg-gray-100/80 dark:bg-gray-700/80 text-gray-600 dark:text-gray-400 hover:bg-gray-200/80 dark:hover:bg-gray-600/80'
+                      : 'bg-gray-100/80 dark:bg-gray-700/80 text-gray-600 dark:text-gray-400 hover:bg-gray-200/80 dark:hover:bg-gray-600/80 p-1.5 md:p-2 rounded-lg md:rounded-xl'
                   }`}
                   title={isListening ? "Stop recording" : "Start voice input"}
                 >
-                  {isListening ? <MicOff size={16} /> : <Mic size={16} />}
+                  {isListening ? <MicOff size={14} /> : <Mic size={14} />}
                 </button>
               )}
             </div>
@@ -215,10 +215,10 @@ export const ChatInput: React.FC<ChatInputProps> = ({
           <button
             type="submit"
             disabled={!message.trim() || isLoading}
-            className="p-4 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex-shrink-0 shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:transform-none"
+            className="p-3 md:p-4 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-xl md:rounded-2xl disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 flex-shrink-0 shadow-lg hover:shadow-xl hover:-translate-y-0.5 disabled:transform-none"
             title="Send message"
           >
-            <Send size={20} />
+            <Send size={16} />
           </button>
         </div>
       </form>

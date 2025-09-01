@@ -159,9 +159,9 @@ function App() {
   }
 
   return (
-    <div className={`h-screen flex overflow-hidden ${isDarkMode ? 'dark' : ''}`}>
+    <div className={`h-screen flex flex-col overflow-hidden ${isDarkMode ? 'dark' : ''}`}>
       {/* Enhanced Background Pattern */}
-      <div className="fixed inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50 dark:from-gray-900 dark:via-blue-900/10 dark:to-indigo-900/20">
+      <div className="fixed inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50 dark:from-gray-900 dark:via-blue-900/10 dark:to-indigo-900/20 -z-10">
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
           <div className="absolute top-20 left-20 w-64 h-64 border-2 border-blue-500 rounded-full animate-pulse"></div>
           <div className="absolute bottom-32 right-32 w-48 h-48 border-2 border-indigo-400 rounded-lg rotate-45 animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -169,7 +169,15 @@ function App() {
         </div>
       </div>
 
-      <div className="h-full w-full flex relative z-10">
+      {/* Fixed Header */}
+      <Header
+        sidebarOpen={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+        selectedRole={chatState.selectedRole}
+      />
+
+      {/* Main Content Area */}
+      <div className="flex-1 flex overflow-hidden relative">
         {/* Enhanced Sidebar */}
         <Sidebar
           isOpen={sidebarOpen}
@@ -182,18 +190,11 @@ function App() {
           isLoading={chatState.isLoading}
         />
 
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col min-w-0">
-          {/* Enhanced Header */}
-          <Header
-            sidebarOpen={sidebarOpen}
-            setSidebarOpen={setSidebarOpen}
-            selectedRole={chatState.selectedRole}
-          />
-
-          {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto">
-            <div className="p-6 space-y-6 min-h-full">
+        {/* Chat Content Area */}
+        <div className="flex-1 flex flex-col min-w-0 relative">
+          {/* Scrollable Messages Container */}
+          <div className="flex-1 overflow-y-auto overscroll-contain">
+            <div className="p-4 md:p-6 space-y-6 pb-8">
               {error && (
                 <ErrorMessage 
                   message={error} 
@@ -215,8 +216,8 @@ function App() {
             </div>
           </div>
 
-          {/* Enhanced Input Area */}
-          <div className="border-t border-gray-200/50 dark:border-gray-700/50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-6 flex-shrink-0">
+          {/* Fixed Input Area */}
+          <div className="border-t border-gray-200/50 dark:border-gray-700/50 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md p-4 md:p-6 flex-shrink-0 relative z-10">
             <ChatInput 
               onSend={handleSendMessage}
               isLoading={chatState.isLoading || !!error}
@@ -226,13 +227,13 @@ function App() {
               onRemoveFile={handleRemoveFile}
             />
             
-            {/* Attribution Footer */}
-            <div className="flex items-center justify-center mt-4 space-x-6 text-xs text-gray-500 dark:text-gray-400">
+            {/* Mobile-Responsive Attribution */}
+            <div className="flex flex-col sm:flex-row items-center justify-center mt-4 gap-2 sm:gap-6 text-xs text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
                 <span className="font-medium">Made By <span className="text-blue-600 dark:text-blue-400 font-semibold">Vipul</span></span>
               </div>
-              <div className="w-px h-4 bg-gray-300 dark:bg-gray-600"></div>
+              <div className="hidden sm:block w-px h-4 bg-gray-300 dark:bg-gray-600"></div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
                 <span className="font-medium">Idea By <span className="text-purple-600 dark:text-purple-400 font-semibold">Akanksha</span></span>
