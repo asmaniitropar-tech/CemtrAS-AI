@@ -40,11 +40,25 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
       <div className="max-w-lg w-full relative z-10">
         {/* Enhanced Header */}
         <div className="text-center mb-12">
-          {/* Enhanced Logo */}
+          {/* Enhanced Logo with your actual logo */}
           <div className="relative mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full blur-2xl"></div>
-            <div className="relative p-8 bg-gradient-to-br from-white to-blue-50 rounded-3xl border-2 border-blue-200 shadow-2xl w-32 h-32 mx-auto flex items-center justify-center backdrop-blur-sm">
-              <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg flex items-center justify-center">
+            <div className="relative p-4 bg-gradient-to-br from-white to-blue-50 rounded-3xl border-2 border-blue-200 shadow-2xl w-32 h-32 mx-auto flex items-center justify-center backdrop-blur-sm">
+              {/* Your actual logo image */}
+              <img 
+                src="/Logo.png" 
+                alt="CemtrAS AI Logo" 
+                className="w-20 h-20 object-contain rounded-2xl"
+                onError={(e) => {
+                  // Fallback to Factory icon if logo fails to load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                  const fallback = target.nextElementSibling as HTMLElement;
+                  if (fallback) fallback.style.display = 'flex';
+                }}
+              />
+              {/* Fallback Factory icon (hidden by default) */}
+              <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg items-center justify-center" style={{ display: 'none' }}>
                 <Factory className="text-white w-12 h-12" />
               </div>
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
