@@ -29,7 +29,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex flex-col justify-center p-4 sm:p-6 relative overflow-auto">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 flex items-center justify-center p-6 relative overflow-hidden">
       {/* Enhanced Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-64 h-64 border-4 border-blue-500 rounded-full animate-pulse"></div>
@@ -37,28 +37,14 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
         <div className="absolute top-1/2 right-1/4 w-32 h-32 border-4 border-purple-500 rounded-full animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="max-w-lg w-full mx-auto relative z-10 py-8">
+      <div className="max-w-lg w-full relative z-10">
         {/* Enhanced Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          {/* Enhanced Logo with your actual logo */}
-          <div className="relative mb-6 sm:mb-8">
+        <div className="text-center mb-12">
+          {/* Enhanced Logo */}
+          <div className="relative mb-8">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full blur-2xl"></div>
-            <div className="relative p-3 sm:p-4 bg-gradient-to-br from-white to-blue-50 rounded-3xl border-2 border-blue-200 shadow-2xl w-24 h-24 sm:w-32 sm:h-32 mx-auto flex items-center justify-center backdrop-blur-sm">
-              {/* Your actual logo image */}
-              <img 
-                src="/Logo.png" 
-                alt="CemtrAS AI Logo" 
-                className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-2xl"
-                onError={(e) => {
-                  // Fallback to Factory icon if logo fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = target.nextElementSibling as HTMLElement;
-                  if (fallback) fallback.style.display = 'flex';
-                }}
-              />
-              {/* Fallback Factory icon (hidden by default) */}
-              <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg items-center justify-center" style={{ display: 'none' }}>
+            <div className="relative p-8 bg-gradient-to-br from-white to-blue-50 rounded-3xl border-2 border-blue-200 shadow-2xl w-32 h-32 mx-auto flex items-center justify-center backdrop-blur-sm">
+              <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg flex items-center justify-center">
                 <Factory className="text-white w-12 h-12" />
               </div>
               <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
@@ -68,7 +54,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
           </div>
 
           {/* Enhanced Branding */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-5xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
             CemtrAS AI
           </h1>
           <div className="flex items-center justify-center gap-3 mb-6">
@@ -78,19 +64,19 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
             </div>
             <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent flex-1 max-w-24"></div>
           </div>
-          <p className="text-base sm:text-lg text-slate-600 font-medium">Enter your name to access all premium features</p>
+          <p className="text-lg text-slate-600 font-medium">Enter your name to access all premium features</p>
         </div>
 
         {/* Enhanced Name Entry Form */}
         <div className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-slate-200/50 overflow-hidden">
-          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-4 sm:py-6 px-6 sm:px-8 text-center">
-            <h2 className="text-xl sm:text-2xl font-bold flex items-center justify-center gap-3">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-6 px-8 text-center">
+            <h2 className="text-2xl font-bold flex items-center justify-center gap-3">
               <User size={24} />
               Welcome! What's your name?
             </h2>
           </div>
 
-          <div className="p-6 sm:p-8">
+          <div className="p-8">
             {/* Error Display */}
             {error && (
               <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 mb-6 text-center backdrop-blur-sm">
