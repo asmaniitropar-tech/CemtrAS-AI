@@ -183,7 +183,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
                 </div>
                 <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
-                  <span>Idea By <span className="font-bold text-purple-600">Akanksha</span></span>
+                  <span>Idea By <span className="font-bold text-purple-600">AS</span></span>
                 </div>
               </div>
             </div>
