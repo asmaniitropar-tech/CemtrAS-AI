@@ -47,7 +47,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
               <div className="relative p-4 bg-gradient-to-br from-white to-blue-50 rounded-3xl border-2 border-blue-200 shadow-2xl w-24 h-24 sm:w-32 sm:h-32 mx-auto flex items-center justify-center backdrop-blur-sm">
                 {/* Your actual logo image */}
                 <img 
-                  src="/Logo.png" 
+                  src="/Logo(4).png" 
                   alt="CemtrAS AI Logo" 
                   className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-2xl"
                   onError={(e) => {
