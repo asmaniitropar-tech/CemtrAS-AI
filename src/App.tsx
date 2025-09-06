@@ -159,7 +159,7 @@ function App() {
   }
 
   return (
-    <div className={`h-screen flex flex-col overflow-hidden ${isDarkMode ? 'dark' : ''}`}>
+    <div className={`h-screen flex flex-col ${isDarkMode ? 'dark' : ''}`}>
       {/* Enhanced Background Pattern */}
       <div className="fixed inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50 dark:from-gray-900 dark:via-blue-900/10 dark:to-indigo-900/20 -z-10">
         <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.05]">
@@ -169,15 +169,15 @@ function App() {
         </div>
       </div>
 
-      {/* Fixed Header */}
+      {/* Optimized Compact Header */}
       <Header
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
         selectedRole={chatState.selectedRole}
       />
 
-      {/* Main Content Area */}
-      <div className="flex-1 flex overflow-hidden relative">
+      {/* Main Content Area with Fixed Layout */}
+      <div className="flex-1 flex relative min-h-0">
         {/* Enhanced Sidebar */}
         <Sidebar
           isOpen={sidebarOpen}
@@ -190,11 +190,11 @@ function App() {
           isLoading={chatState.isLoading}
         />
 
-        {/* Chat Content Area */}
-        <div className="flex-1 flex flex-col min-w-0 relative">
-          {/* Scrollable Messages Container */}
-          <div className="flex-1 overflow-y-auto overscroll-contain">
-            <div className="p-4 md:p-6 space-y-6 pb-8">
+        {/* Chat Content Area with Fixed Input */}
+        <div className="flex-1 flex flex-col min-w-0 relative overflow-hidden">
+          {/* Scrollable Messages Container with Fixed Height */}
+          <div className="flex-1 overflow-y-auto overscroll-contain pb-32 md:pb-36">
+            <div className="p-4 md:p-6 space-y-6">
               {error && (
                 <ErrorMessage 
                   message={error} 
@@ -216,8 +216,8 @@ function App() {
             </div>
           </div>
 
-          {/* Fixed Input Area */}
-          <div className="border-t border-gray-200/50 dark:border-gray-700/50 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md p-4 md:p-6 flex-shrink-0 relative z-10">
+          {/* Fixed/Sticky Input Area at Bottom */}
+          <div className="fixed bottom-0 left-0 right-0 lg:left-72 xl:left-80 border-t border-gray-200/50 dark:border-gray-700/50 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md p-4 md:p-6 z-30">
             <ChatInput 
               onSend={handleSendMessage}
               isLoading={chatState.isLoading || !!error}
@@ -227,7 +227,7 @@ function App() {
               onRemoveFile={handleRemoveFile}
             />
             
-            {/* Mobile-Responsive Attribution */}
+            {/* Compact Mobile-Responsive Attribution */}
             <div className="flex flex-col sm:flex-row items-center justify-center mt-4 gap-2 sm:gap-6 text-xs text-gray-500 dark:text-gray-400">
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
