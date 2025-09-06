@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Factory, User, ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
+import { User, ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 
 interface NameEntryScreenProps {
@@ -41,27 +41,15 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
         <div className="max-w-lg mx-auto relative z-10 space-y-8">
           {/* Enhanced Header */}
           <div className="text-center space-y-6">
-            {/* Enhanced Logo with your actual logo */}
+            {/* Enhanced Logo with only Logo (4).png */}
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/30 to-indigo-600/30 rounded-full blur-2xl"></div>
               <div className="relative p-4 bg-gradient-to-br from-white to-blue-50 rounded-3xl border-2 border-blue-200 shadow-2xl w-24 h-24 sm:w-32 sm:h-32 mx-auto flex items-center justify-center backdrop-blur-sm">
-                {/* Your actual logo image */}
                 <img 
                   src="/Logo (4).png" 
                   alt="CemtrAS AI Logo" 
                   className="w-16 h-16 sm:w-20 sm:h-20 object-contain rounded-2xl"
-                  onError={(e) => {
-                    // Fallback to Factory icon if logo fails to load
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    const fallback = target.nextElementSibling as HTMLElement;
-                    if (fallback) fallback.style.display = 'flex';
-                  }}
                 />
-                {/* Fallback Factory icon (hidden by default) */}
-                <div className="absolute inset-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-lg items-center justify-center" style={{ display: 'none' }}>
-                  <Factory className="text-white w-8 h-8 sm:w-12 sm:h-12" />
-                </div>
                 <div className="absolute -top-2 -right-2 w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                   <Sparkles className="text-white w-3 h-3 sm:w-4 sm:h-4" />
                 </div>
@@ -192,4 +180,4 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
       </div>
     </div>
   );
- };
+};
