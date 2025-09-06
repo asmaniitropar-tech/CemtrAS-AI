@@ -76,7 +76,7 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
             <div className="hidden md:flex items-center gap-2 px-2 py-1 bg-green-100/80 dark:bg-green-900/30 rounded-lg border border-green-200/50 dark:border-green-800/50 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-xs font-bold text-green-700 dark:text-green-400">
-                Online & Ready
+                Online
               </span>
             </div>
 
