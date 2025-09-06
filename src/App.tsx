@@ -236,7 +236,7 @@ function App() {
               <div className="hidden sm:block w-px h-4 bg-gray-300 dark:bg-gray-600"></div>
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
-                <span className="font-medium">Idea By <span className="text-purple-600 dark:text-purple-400 font-semibold">Akanksha</span></span>
+                <span className="font-medium">Idea By <span className="text-purple-600 dark:text-purple-400 font-semibold">AS</span></span>
               </div>
             </div>
           </div>
