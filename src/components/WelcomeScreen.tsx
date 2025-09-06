@@ -1,5 +1,5 @@
 import React from 'react';
-import { Factory, Sparkles, ArrowRight, Zap, Shield, Target } from 'lucide-react';
+import { Sparkles, ArrowRight, Zap, Shield, Target } from 'lucide-react';
 import type { UserRole } from '../types';
 
 interface WelcomeScreenProps {
@@ -13,8 +13,12 @@ export const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ selectedRole }) =>
       <div className="relative mb-8 md:mb-12">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-indigo-600/20 rounded-full blur-3xl"></div>
         <div className="relative p-8 md:p-12 bg-gradient-to-br from-white to-blue-50/50 dark:from-gray-800 dark:to-blue-900/20 rounded-2xl md:rounded-3xl border-2 border-blue-200/50 dark:border-blue-800/50 shadow-2xl w-32 h-32 md:w-48 md:h-48 mx-auto flex items-center justify-center backdrop-blur-sm">
-          <div className="absolute inset-3 md:inset-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center">
-            <Factory className="text-white w-12 h-12 md:w-20 md:h-20" />
+          <div className="absolute inset-3 md:inset-4 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center overflow-hidden">
+            <img
+              src="/Logo (4).png"
+              alt="CemtrAS AI Logo"
+              className="w-12 h-12 md:w-20 md:h-20 object-contain"
+            />
           </div>
           <div className="absolute -top-1 -right-1 md:-top-2 md:-right-2 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
             <Sparkles className="text-white w-3 h-3 md:w-4 md:h-4" />
