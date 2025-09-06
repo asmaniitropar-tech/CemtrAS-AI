@@ -244,7 +244,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <div className="flex items-center justify-center gap-2 text-xs">
                 <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
                 <span className="text-gray-600 dark:text-gray-400 font-medium">
-                  Idea By <span className="text-purple-600 dark:text-purple-400 font-bold">Akanksha</span>
+                  Idea By <span className="text-purple-600 dark:text-purple-400 font-bold">AS</span>
                 </span>
               </div>
             </div>
