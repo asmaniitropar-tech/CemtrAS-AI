@@ -31,17 +31,14 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
             )}
           </button>
 
-          {/* Enhanced App Branding */}
+          {/* App Branding with only Logo (4).png */}
           <div className="flex items-center gap-3">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg blur-sm opacity-50"></div>
-              <div className="relative p-2 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg shadow-lg w-8 h-8 flex items-center justify-center overflow-hidden">
-                <img 
-                  src="/Logo (4).png" 
-                  alt="CemtrAS AI Logo" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
+            <div className="relative w-8 h-8 flex items-center justify-center">
+              <img 
+                src="/Logo (4).png" 
+                alt="CemtrAS AI Logo" 
+                className="w-full h-full object-contain"
+              />
               <div className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                 <Sparkles className="text-white w-2 h-2" />
               </div>
@@ -60,9 +57,9 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
           </div>
         </div>
 
-        {/* Right Section - Enhanced Controls */}
+        {/* Right Section - Controls */}
         <div className="flex items-center gap-2">
-          {/* Enhanced Dark Mode Toggle */}
+          {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
             className="p-2 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 rounded-lg transition-all duration-200 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50"
@@ -75,7 +72,7 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
             )}
           </button>
 
-          {/* Enhanced User Section */}
+          {/* User Section */}
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-2 px-2 py-1 bg-green-100/80 dark:bg-green-900/30 rounded-lg border border-green-200/50 dark:border-green-800/50 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
