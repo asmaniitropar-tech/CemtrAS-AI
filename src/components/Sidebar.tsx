@@ -1,192 +1,106 @@
-import React, { useState } from 'react';
-import { User, LogOut, X, Plus, MessageSquare, Zap, History } from 'lucide-react';
-import { RoleSelector } from './RoleSelector';
+import React from 'react';
+import { Menu, X, User, Moon, Sun } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { useChatHistory } from '../contexts/ChatHistoryContext';
-import type { UserRole, ChatHistory } from '../types';
+import { useTheme } from '../contexts/ThemeContext';
+import type { UserRole } from '../types';
 
-interface SidebarProps {
-  isOpen: boolean;
-  onClose: () => void;
+interface HeaderProps {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
   selectedRole: UserRole | 'General AI';
-  onRoleChange: (role: UserRole | 'General AI') => void;
-  onLoadChat: (history: ChatHistory) => void;
-  onNewChat: () => void;
-  messageCount: number;
-  isLoading: boolean;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({
-  isOpen,
-  onClose,
-  selectedRole,
-  onRoleChange,
-  onLoadChat,
-  onNewChat,
-  messageCount,
-  isLoading
-}) => {
-  const { user, logout } = useAuth();
-  const { histories } = useChatHistory();
-  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
-
-  const handleLogout = () => {
-    logout();
-    setShowLogoutConfirm(false);
-    onClose();
-    window.location.reload();
-  };
-
-  const handleChatSelect = (chatId: string) => {
-    const history = histories.find(h => h.id === chatId);
-    if (history) {
-      onLoadChat(history);
-    }
-  };
+export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, selectedRole }) => {
+  const { user, isAuthenticated } = useAuth();
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   return (
-    <>
-      {/* Mobile Overlay */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
-          onClick={onClose}
-        />
-      )}
-
-      {/* Sidebar */}
-      <div 
-        className={`
-          ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-          fixed lg:static z-50 lg:z-auto
-          w-72 md:w-80 h-full
-          bg-white/90 dark:bg-gray-900/90 backdrop-blur-md
-          border-r border-gray-200/50 dark:border-gray-700/50
-          flex flex-col shadow-2xl lg:shadow-xl
-          transition-all duration-300 ease-in-out
-          top-0 lg:top-auto
-        `}
-      >
-        {/* User Section (10%) */}
-        <div className="basis-[10%] p-4 md:p-6 border-b border-gray-200/50 dark:border-gray-700/50 flex-shrink-0">
-          {user && (
-            <div className="p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg flex items-center gap-3">
-              <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg">
-                <User className="text-white" size={14} />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-gray-900 dark:text-white truncate">
-                  {user.name}
-                </h3>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs font-semibold text-green-600 dark:text-green-400">
-                    Premium Access
-                  </span>
-                </div>
-              </div>
-              <button
-                onClick={() => setShowLogoutConfirm(true)}
-                className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
-                title="Logout"
-              >
-                <LogOut className="text-gray-400 hover:text-red-500" size={14} />
-              </button>
-            </div>
-          )}
-        </div>
-
-        {/* Role Selector (60%) */}
-        <div className="basis-[60%] p-4 md:p-6 overflow-y-auto">
-          <h4 className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-4 flex items-center gap-2">
-            <Zap className="w-4 h-4 text-blue-500" />
-            Select Expertise
-          </h4>
-          <RoleSelector 
-            selectedRole={selectedRole}
-            onRoleChange={onRoleChange}
-          />
-        </div>
-
-        {/* New Chat Button (10%) */}
-        <div className="basis-[10%] p-4 md:p-6 flex items-center">
+    <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 p-3 md:p-4 shadow-lg flex-shrink-0 relative z-20">
+      <div className="flex items-center justify-between">
+        {/* Left Section - Branding */}
+        <div className="flex items-center gap-3">
+          {/* Mobile Menu Toggle */}
           <button
-            onClick={onNewChat}
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 md:py-4 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-xl md:rounded-2xl transition-all duration-200 font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 text-sm md:text-base"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="lg:hidden p-2 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 rounded-lg transition-all duration-200 backdrop-blur-sm"
           >
-            <Plus size={18} />
-            <span>New Chat</span>
+            {sidebarOpen ? (
+              <X className="text-gray-700 dark:text-gray-300" size={18} />
+            ) : (
+              <Menu className="text-gray-700 dark:text-gray-300" size={18} />
+            )}
           </button>
-        </div>
 
-        {/* Chat History + Stats + Footer (20%) */}
-        <div className="basis-[20%] p-4 md:p-6 flex flex-col overflow-y-auto">
-          <div className="flex-1 min-h-0">
-            <h4 className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-4 flex items-center gap-2">
-              <History className="w-4 h-4 text-purple-500" />
-              Chat History
-            </h4>
-            <div className="space-y-2">
-              {histories.length === 0 ? (
-                <div className="text-center py-4">
-                  <MessageSquare className="w-10 h-10 text-gray-300 dark:text-gray-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">
-                    No chat history yet
-                  </p>
-                </div>
-              ) : (
-                histories.map((chat) => (
-                  <button
-                    key={chat.id}
-                    onClick={() => handleChatSelect(chat.id)}
-                    className="w-full text-left p-3 md:p-4 bg-white/60 dark:bg-gray-800/60 hover:bg-white/80 dark:hover:bg-gray-800/80 rounded-xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-200 backdrop-blur-sm shadow-sm hover:shadow-md group"
-                  >
-                    <h5 className="text-sm font-bold text-gray-900 dark:text-white truncate group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                      {chat.title}
-                    </h5>
-                    <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 truncate">
-                      {chat.messages.length} messages
-                    </p>
-                  </button>
-                ))
-              )}
+          {/* Logo + Branding */}
+          <div className="flex items-center gap-3">
+            <div className="relative w-20 h-20 flex items-center justify-center">
+              <img 
+                src="/Logo (4).png" 
+                alt="CemtrAS AI Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
-          </div>
-        </div>
-
-        {/* Logout Modal */}
-        {showLogoutConfirm && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] p-4">
-            <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-gray-200/50 dark:border-gray-700/50">
-              <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <LogOut className="text-white w-8 h-8" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                  Confirm Logout
-                </h3>
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  Are you sure you want to logout? Your chat history will be preserved for when you return.
+            <div>
+              <h1 className="text-xl md:text-2xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                CemtrAS AI
+              </h1>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <p className="text-xs font-bold text-blue-600 dark:text-blue-400">
+                  {selectedRole} 
                 </p>
               </div>
-              <div className="flex gap-3">
-                <button
-                  onClick={() => setShowLogoutConfirm(false)}
-                  className="flex-1 py-4 px-6 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-2xl font-bold hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-200 shadow-md"
-                >
-                  Cancel
-                </button>
-                <button
-                  onClick={handleLogout}
-                  className="flex-1 py-4 px-6 bg-gradient-to-r from-red-600 to-pink-600 text-white rounded-2xl font-bold hover:from-red-700 hover:to-pink-700 transition-all duration-200 shadow-lg"
-                >
-                  Logout
-                </button>
-              </div>
             </div>
           </div>
-        )}
+        </div>
+
+        {/* Right Section - Controls */}
+        <div className="flex items-center gap-2">
+          {/* Dark Mode Toggle */}
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 rounded-lg transition-all duration-200 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50"
+            title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          >
+            {isDarkMode ? (
+              <Sun className="text-yellow-500 w-4 h-4" />
+            ) : (
+              <Moon className="text-gray-600 w-4 h-4" />
+            )}
+          </button>
+
+          {/* User Section */}
+          <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-2 px-2 py-1 bg-green-100/80 dark:bg-green-900/30 rounded-lg border border-green-200/50 dark:border-green-800/50 backdrop-blur-sm">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-xs font-bold text-green-700 dark:text-green-400">
+                Online
+              </span>
+            </div>
+
+            {user ? (
+              <div className="flex items-center gap-2 px-2 py-1 bg-white/80 dark:bg-gray-800/80 rounded-lg border border-gray-200/50 dark:border-gray-700/50 shadow-lg backdrop-blur-sm">
+                <span className="text-xs font-bold text-gray-900 dark:text-white hidden lg:inline">
+                  {user.name}
+                </span>
+                <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg">
+                  <User className="text-white" size={12} />
+                </div>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2 px-2 py-1 bg-white/80 dark:bg-gray-800/80 rounded-lg border border-gray-200/50 dark:border-gray-700/50 shadow-lg backdrop-blur-sm">
+                <div className="w-7 h-7 rounded-full overflow-hidden border-2 border-blue-500 shadow-lg">
+                  <img 
+                    src="/untitled (10).jpeg"
+                    alt="User"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
