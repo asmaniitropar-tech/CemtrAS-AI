@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Factory, User, LogOut, X, Plus, MessageSquare, Zap, History, Sparkles } from 'lucide-react';
+import { User, LogOut, X, Plus, MessageSquare, Zap, History } from 'lucide-react';
 import { RoleSelector } from './RoleSelector';
 import { useAuth } from '../contexts/AuthContext';
 import { useChatHistory } from '../contexts/ChatHistoryContext';
@@ -72,12 +72,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
           <div className="flex items-center justify-between mb-4 md:mb-6">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="p-2 md:p-3 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl md:rounded-2xl shadow-xl">
-                  <Factory className="text-white" size={18} />
-                </div>
-                <div className="absolute -top-0.5 -right-0.5 md:-top-1 md:-right-1 w-4 h-4 md:w-5 md:h-5 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
-                  <Sparkles className="text-white w-2 h-2 md:w-2.5 md:h-2.5" />
-                </div>
+                {/* Replaced Factory + Sparkles with Logo */}
+                <img 
+                  src="/Logo (4).png" 
+                  alt="CemtrAS AI Logo" 
+                  className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                />
               </div>
               <div>
                 <h2 className="text-lg md:text-xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
