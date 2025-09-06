@@ -67,22 +67,20 @@ export const Sidebar: React.FC<SidebarProps> = ({
           top-0 lg:top-auto
         `}
       >
-        {/* Enhanced Sidebar Header */}
+        {/* Sidebar Header */}
         <div className="p-4 md:p-6 border-b border-gray-200/50 dark:border-gray-700/50 flex-shrink-0 bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-900/20 dark:to-indigo-900/20">
           <div className="flex items-center justify-between mb-4 md:mb-6">
             <div className="flex items-center gap-3">
               <div className="relative">
-                {/* Replaced Factory + Sparkles with Logo */}
+                {/* Logo only */}
                 <img 
                   src="/Logo (4).png" 
-                  alt="CemtrAS AI Logo" 
+                  alt="Logo" 
                   className="w-12 h-12 md:w-16 md:h-16 object-contain"
                 />
               </div>
               <div>
-                <h2 className="text-lg md:text-xl font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                  CemtrAS AI
-                </h2>
+                {/* Removed CemtrAS AI title */}
                 <p className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wide">
                   AI-Driven Engineering
                 </p>
@@ -96,12 +94,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </button>
           </div>
 
-          {/* Enhanced User Profile */}
+          {/* User Profile */}
           {user && (
             <div className="p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg">
-                  <User className="text-white" size={16} />
+                {/* Reduced user avatar size */}
+                <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg">
+                  <User className="text-white" size={12} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-sm font-bold text-gray-900 dark:text-white truncate">
@@ -126,7 +125,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           )}
         </div>
 
-        {/* Enhanced Content Area */}
+        {/* Content Area */}
         <div className="flex-1 flex flex-col min-h-0 p-4 md:p-6 space-y-4 md:space-y-6 overflow-y-auto">
           {/* New Chat Button */}
           <button
@@ -151,7 +150,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           </div>
 
-          {/* Unified Chat History */}
+          {/* Chat History */}
           <div className="flex-1 min-h-0">
             <h4 className="text-sm font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide mb-4 flex items-center gap-2">
               <History className="w-4 h-4 text-purple-500" />
@@ -202,7 +201,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </div>
           </div>
 
-          {/* Enhanced Stats */}
+          {/* Stats */}
           <div className="space-y-3 pt-4 border-t border-gray-200/50 dark:border-gray-700/50 flex-shrink-0">
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-4 border border-blue-200/50 dark:border-blue-800/50">
@@ -230,7 +229,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
         </div>
 
-        {/* Enhanced Footer with Attribution */}
+        {/* Footer */}
         <div className="p-4 md:p-6 border-t border-gray-200/50 dark:border-gray-700/50 flex-shrink-0 bg-gradient-to-r from-gray-50/50 to-blue-50/50 dark:from-gray-800/50 dark:to-blue-900/20">
           <div className="text-center space-y-3">
             {/* Attribution */}
@@ -262,7 +261,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
         </div>
       </div>
 
-      {/* Enhanced Logout Confirmation Modal */}
+      {/* Logout Confirmation Modal */}
       {showLogoutConfirm && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-[60] p-4">
           <div className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-md rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-gray-200/50 dark:border-gray-700/50">
