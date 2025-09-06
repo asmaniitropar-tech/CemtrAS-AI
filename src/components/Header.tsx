@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, User, Moon, Sun, Sparkles } from 'lucide-react';
+import { Menu, X, User, Moon, Sun } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
 import type { UserRole } from '../types';
@@ -39,13 +39,10 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
                 alt="CemtrAS AI Logo" 
                 className="w-full h-full object-contain"
               />
-              <div className="absolute -top-1 -right-1 w-5 h-5 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                <Sparkles className="text-white w-3 h-3" />
-              </div>
             </div>
             <div>
               <h1 className="text-xl md:text-2xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                CemtrAS AI
+              
               </h1>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
