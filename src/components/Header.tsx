@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, X, Factory, User, Moon, Sun, Sparkles } from 'lucide-react';
+import { Menu, X, User, Moon, Sun, Sparkles } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
 import type { UserRole } from '../types';
@@ -35,8 +35,12 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
           <div className="flex items-center gap-3">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg blur-sm opacity-50"></div>
-              <div className="relative p-2 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg shadow-lg">
-                <Factory className="text-white" size={16} />
+              <div className="relative p-2 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg shadow-lg w-8 h-8 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/Logo (4).png" 
+                  alt="CemtrAS AI Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
                 <Sparkles className="text-white w-2 h-2" />
@@ -44,7 +48,7 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
             </div>
             <div>
               <h1 className="text-lg md:text-xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                
+                CemtrAS AI
               </h1>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
