@@ -163,6 +163,19 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
                 </div>
               </div>
 
+              {/* Available Expertise Areas */}
+              <div className="mt-10 p-6 bg-slate-50 rounded-2xl border border-slate-200 shadow-inner space-y-4">
+                <h3 className="text-lg font-black text-slate-800 text-center">🚀 Available Expertise Areas</h3>
+                <ul className="space-y-3 text-sm font-medium text-slate-700">
+                  <li>⚙️ <b>Plant Operations & Maintenance</b> – Machinery troubleshooting & process optimization</li>
+                  <li>📊 <b>Project Management</b> – EPC scheduling & resource planning</li>
+                  <li>📈 <b>Sales & Marketing</b> – Market analysis & customer strategies</li>
+                  <li>🛒 <b>Procurement & Supply Chain</b> – Vendor negotiations & inventory optimization</li>
+                  <li>🔧 <b>Erection & Commissioning</b> – Installation sequencing & safety compliance</li>
+                  <li>⚡ <b>Engineering & Design</b> – Process flow design & equipment selection</li>
+                </ul>
+              </div>
+
               {/* Attribution */}
               <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center space-y-2">
                 <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
