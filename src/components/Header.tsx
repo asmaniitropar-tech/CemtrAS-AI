@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
             </div>
             <div>
               <h1 className="text-lg md:text-xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                CemtrAS AI
+                
               </h1>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
