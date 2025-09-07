@@ -2,9 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .rtl-space-reverse {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .rtl-text-right {
+  text-align: right;
+}
+
+[dir="ltr"] .rtl-text-right {
+  text-align: left;
+}
+
 @layer base {
   html {
     overflow-x: hidden;
+    /* Support for RTL languages */
+    direction: ltr;
+  }
+  
+  html[dir="rtl"] {
+    direction: rtl;
   }
   
   body {

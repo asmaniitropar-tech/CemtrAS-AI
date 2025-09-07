@@ -1,0 +1,107 @@
+{
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "retry": "إعادة المحاولة",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "delete": "حذف",
+    "edit": "تعديل",
+    "close": "إغلاق",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "export": "تصدير",
+    "import": "استيراد",
+    "settings": "الإعدادات",
+    "help": "مساعدة",
+    "about": "حول",
+    "contact": "اتصال",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة"
+  },
+  "auth": {
+    "welcome": "مرحباً بك في CemtrAS AI",
+    "enterName": "أدخل اسمك",
+    "nameRequired": "الاسم مطلوب",
+    "nameMinLength": "يجب أن يكون الاسم على الأقل حرفين",
+    "getStarted": "ابدأ",
+    "logout": "تسجيل الخروج",
+    "confirmLogout": "هل أنت متأكد من أنك تريد تسجيل الخروج؟",
+    "premiumAccess": "وصول مميز",
+    "onlineStatus": "متصل"
+  },
+  "chat": {
+    "newChat": "محادثة جديدة",
+    "chatHistory": "تاريخ المحادثات",
+    "noChats": "لا توجد محادثات بعد",
+    "startConversation": "ابدأ محادثة لرؤية محادثاتك هنا",
+    "typeMessage": "اكتب رسالتك...",
+    "sendMessage": "إرسال الرسالة",
+    "voiceInput": "إدخال صوتي",
+    "stopRecording": "إيقاف التسجيل",
+    "uploadFiles": "رفع الملفات",
+    "analyzing": "CemtrAS AI يحلل استفسارك...",
+    "processing": "جاري المعالجة...",
+    "ready": "جاهز",
+    "messages": "الرسائل",
+    "status": "الحالة",
+    "expertise": "اختر الخبرة",
+    "currentExpertise": "الخبرة الحالية",
+    "expertiseAreas": "مجالات الخبرة المتاحة"
+  },
+  "roles": {
+    "operations": "العمليات والصيانة",
+    "projectManagement": "إدارة المشاريع",
+    "salesMarketing": "المبيعات والتسويق",
+    "procurement": "المشتريات وسلسلة التوريد",
+    "erectionCommissioning": "التركيب والتشغيل",
+    "engineeringDesign": "الهندسة والتصميم",
+    "generalAI": "مساعد الذكاء الاصطناعي العام"
+  },
+  "roleDescriptions": {
+    "operations": "استكشاف أخطاء الآلات وتحسين العمليات",
+    "projectManagement": "جدولة EPC وتخطيط الموارد",
+    "salesMarketing": "تحليل السوق واستراتيجيات العملاء",
+    "procurement": "مفاوضات الموردين وتحسين المخزون",
+    "erectionCommissioning": "تسلسل التركيب والامتثال للسلامة",
+    "engineeringDesign": "تصميم تدفق العمليات واختيار المعدات",
+    "generalAI": "ذكاء اصطناعي عام لأي أسئلة"
+  },
+  "features": {
+    "aiAssistant": "مساعد الذكاء الاصطناعي العام",
+    "fileUpload": "دعم رفع الملفات",
+    "chatHistory": "تاريخ المحادثات والجلسات",
+    "expertAreas": "جميع المجالات الخبيرة",
+    "instantAccess": "ستحصل على وصول فوري إلى:",
+    "readyToStart": "مستعد للبدء؟",
+    "askAnything": "اسألني أي شيء عن عمليات مصانع الأسمنت، وسأقدم لك إرشادات خبيرة مصممة خصيصاً لاحتياجاتك.",
+    "startTyping": "ابدأ الكتابة أدناه"
+  },
+  "errors": {
+    "systemError": "خطأ في النظام",
+    "apiKeyMissing": "GEMINI_API_KEY غير مكون. يرجى تعيين VITE_GEMINI_API_KEY في متغيرات البيئة الخاصة بك.",
+    "quotaExceeded": "تم تجاوز حصة API. يرجى المحاولة مرة أخرى لاحقاً أو التحقق من إعدادات الفوترة.",
+    "contentBlocked": "تم حظر المحتوى بواسطة مرشحات الأمان. يرجى إعادة صياغة سؤالك.",
+    "technicalError": "حدث خطأ تقني في النظام. يرجى المحاولة مرة أخرى أو الاتصال بالدعم.",
+    "authFailed": "فشل في المصادقة. يرجى المحاولة مرة أخرى.",
+    "networkError": "خطأ في الشبكة. يرجى التحقق من اتصالك والمحاولة مرة أخرى."
+  },
+  "footer": {
+    "madeBy": "صنع بواسطة",
+    "ideaBy": "فكرة بواسطة",
+    "poweredBy": "مدعوم بواسطة",
+    "copyright": "© 2025 CemtrAS AI",
+    "company": "TrackAS Technology"
+  },
+  "accessibility": {
+    "toggleSidebar": "تبديل الشريط الجانبي",
+    "toggleDarkMode": "تبديل الوضع المظلم",
+    "userMenu": "قائمة المستخدم",
+    "languageSelector": "محدد اللغة",
+    "closeModal": "إغلاق النافذة المنبثقة"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "retry": "重试",
+    "cancel": "取消",
+    "save": "保存",
+    "delete": "删除",
+    "edit": "编辑",
+    "close": "关闭",
+    "back": "返回",
+    "next": "下一个",
+    "previous": "上一个",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "export": "导出",
+    "import": "导入",
+    "settings": "设置",
+    "help": "帮助",
+    "about": "关于",
+    "contact": "联系",
+    "privacy": "隐私政策",
+    "terms": "服务条款"
+  },
+  "auth": {
+    "welcome": "欢迎使用 CemtrAS AI",
+    "enterName": "输入您的姓名",
+    "nameRequired": "姓名是必需的",
+    "nameMinLength": "姓名至少需要2个字符",
+    "getStarted": "开始使用",
+    "logout": "退出登录",
+    "confirmLogout": "您确定要退出登录吗？",
+    "premiumAccess": "高级访问",
+    "onlineStatus": "在线"
+  },
+  "chat": {
+    "newChat": "新对话",
+    "chatHistory": "对话历史",
+    "noChats": "暂无对话",
+    "startConversation": "开始对话以在此处查看您的聊天记录",
+    "typeMessage": "输入您的消息...",
+    "sendMessage": "发送消息",
+    "voiceInput": "语音输入",
+    "stopRecording": "停止录音",
+    "uploadFiles": "上传文件",
+    "analyzing": "CemtrAS AI 正在分析您的查询...",
+    "processing": "处理中...",
+    "ready": "就绪",
+    "messages": "消息",
+    "status": "状态",
+    "expertise": "选择专业领域",
+    "currentExpertise": "当前专业领域",
+    "expertiseAreas": "可用专业领域"
+  },
+  "roles": {
+    "operations": "运营与维护",
+    "projectManagement": "项目管理",
+    "salesMarketing": "销售与营销",
+    "procurement": "采购与供应链",
+    "erectionCommissioning": "安装与调试",
+    "engineeringDesign": "工程与设计",
+    "generalAI": "通用AI助手"
+  },
+  "roleDescriptions": {
+    "operations": "机械故障排除和工艺优化",
+    "projectManagement": "EPC调度和资源规划",
+    "salesMarketing": "市场分析和客户策略",
+    "procurement": "供应商谈判和库存优化",
+    "erectionCommissioning": "安装排序和安全合规",
+    "engineeringDesign": "工艺流程设计和设备选择",
+    "generalAI": "适用于任何问题的通用AI"
+  },
+  "features": {
+    "aiAssistant": "通用AI助手",
+    "fileUpload": "文件上传支持",
+    "chatHistory": "聊天历史和会话",
+    "expertAreas": "所有专家领域",
+    "instantAccess": "您将立即获得以下访问权限：",
+    "readyToStart": "准备开始了吗？",
+    "askAnything": "询问我关于水泥厂运营的任何问题，我将为您提供量身定制的专家指导。",
+    "startTyping": "开始在下方输入"
+  },
+  "errors": {
+    "systemError": "系统错误",
+    "apiKeyMissing": "GEMINI_API_KEY 未配置。请在环境变量中设置 VITE_GEMINI_API_KEY。",
+    "quotaExceeded": "API配额已超出。请稍后重试或检查您的计费设置。",
+    "contentBlocked": "内容被安全过滤器阻止。请重新表述您的问题。",
+    "technicalError": "发生技术系统错误。请重试或联系支持。",
+    "authFailed": "身份验证失败。请重试。",
+    "networkError": "网络错误。请检查您的连接并重试。"
+  },
+  "footer": {
+    "madeBy": "制作者",
+    "ideaBy": "创意者",
+    "poweredBy": "技术支持",
+    "copyright": "© 2025 CemtrAS AI",
+    "company": "TrackAS Technology"
+  },
+  "accessibility": {
+    "toggleSidebar": "切换侧边栏",
+    "toggleDarkMode": "切换深色模式",
+    "userMenu": "用户菜单",
+    "languageSelector": "语言选择器",
+    "closeModal": "关闭模态框"
+  }
+}

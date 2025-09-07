@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { User, ArrowRight, Sparkles, Shield, Zap } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { useI18n } from '../hooks/useI18n';
+import { LanguageSelector } from './LanguageSelector';
 
 interface NameEntryScreenProps {
   onComplete: () => void;
@@ -8,6 +10,7 @@ interface NameEntryScreenProps {
 
 export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) => {
   const { authenticateWithName, isLoading, error, clearError } = useAuth();
+  const { t } = useI18n();
   const [name, setName] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,6 +42,11 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
 
       <div className="container mx-auto px-4 py-8 min-h-screen">
         <div className="max-w-lg mx-auto relative z-10 space-y-8">
+          {/* Language Selector */}
+          <div className="flex justify-end">
+            <LanguageSelector showLabel />
+          </div>
+          
           {/* Enhanced Header */}
           <div className="text-center space-y-6">
             {/* Enhanced Logo with only Logo (4).png */}
@@ -59,16 +67,17 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
             {/* Enhanced Branding */}
             <div className="space-y-4">
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                CemtrAS AI
+                {t('app.name', 'CemtrAS AI')}
               </h1>
               <div className="flex items-center justify-center gap-3">
                 <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent flex-1 max-w-16 sm:max-w-24"></div>
                 <div className="px-3 py-1 sm:px-4 sm:py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold rounded-full shadow-lg">
-                  AI-DRIVEN ENGINEERING
+                  {t('app.tagline', 'AI-DRIVEN ENGINEERING')}
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent flex-1 max-w-16 sm:max-w-24"></div>
               </div>
               <p className="text-base sm:text-lg text-slate-600 font-medium">Enter your name to access all premium features</p>
+              <p className="text-base sm:text-lg text-slate-600 font-medium">{t('auth.enterNamePrompt')}</p>
             </div>
           </div>
 
@@ -77,7 +86,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-4 sm:py-6 px-6 sm:px-8 text-center">
               <h2 className="text-xl sm:text-2xl font-bold flex items-center justify-center gap-3">
                 <User size={20} className="sm:w-6 sm:h-6" />
-                Welcome! What's your name?
+                {t('auth.welcome')}
               </h2>
             </div>
 
@@ -85,7 +94,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
               {/* Error Display */}
               {error && (
                 <div className="bg-red-50 border-2 border-red-200 rounded-2xl p-4 mb-6 text-center backdrop-blur-sm">
-                  <p className="text-red-700 font-bold text-sm">{error}</p>
+                  <p className="text-red-700 font-bold text-sm">{t(`errors.${error}`, error)}</p>
                 </div>
               )}
 
@@ -97,7 +106,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
                     type="text"
                     value={name}
                     onChange={handleInputChange}
-                    placeholder="Enter your name"
+                    placeholder={t('auth.enterName')}
                     className="w-full pl-14 pr-6 py-4 sm:py-5 border-2 border-slate-300 rounded-2xl 
                              focus:border-blue-500 focus:outline-none transition-all duration-200
                              font-bold text-lg bg-white/80 backdrop-blur-sm shadow-lg
@@ -113,7 +122,7 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
                   <span className={`text-xs font-bold ${
                     name.length >= 2 ? 'text-green-600' : 'text-gray-400'
                   }`}>
-                    {name.length}/2 minimum characters
+                    {t('auth.characterCount', { count: name.length, min: 2 })}
                   </span>
                 </div>
 
@@ -130,12 +139,12 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
                   {isLoading ? (
                     <>
                       <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                      Getting Started...
+                      {t('auth.gettingStarted')}
                     </>
                   ) : (
                     <>
                       <Zap size={20} className="sm:w-6 sm:h-6" />
-                      Access All Features
+                      {t('auth.getStarted')}
                       <ArrowRight size={20} className="sm:w-6 sm:h-6" />
                     </>
                   )}
@@ -146,14 +155,14 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
               <div className="mt-8 sm:mt-10 space-y-4">
                 <h4 className="text-sm font-black text-slate-700 text-center mb-4 sm:mb-6 flex items-center justify-center gap-2">
                   <Shield className="w-4 h-4 text-green-500" />
-                  🎉 You'll get instant access to:
+                  🎉 {t('features.instantAccess')}
                 </h4>
                 <div className="grid grid-cols-2 gap-3 text-sm">
                   {[
-                    { icon: '🤖', text: 'General AI Assistant', color: 'bg-purple-100 text-purple-700' },
-                    { icon: '📎', text: 'File Upload Support', color: 'bg-blue-100 text-blue-700' },
-                    { icon: '💾', text: 'Chat History & Sessions', color: 'bg-green-100 text-green-700' },
-                    { icon: '⚡', text: 'All Expert Areas', color: 'bg-yellow-100 text-yellow-700' }
+                    { icon: '🤖', text: t('features.aiAssistant'), color: 'bg-purple-100 text-purple-700' },
+                    { icon: '📎', text: t('features.fileUpload'), color: 'bg-blue-100 text-blue-700' },
+                    { icon: '💾', text: t('features.chatHistory'), color: 'bg-green-100 text-green-700' },
+                    { icon: '⚡', text: t('features.expertAreas'), color: 'bg-yellow-100 text-yellow-700' }
                   ].map((feature, index) => (
                     <div key={index} className={`${feature.color} rounded-xl p-3 text-center font-bold backdrop-blur-sm border border-current/20`}>
                       <div className="text-base sm:text-lg mb-1">{feature.icon}</div>
@@ -167,11 +176,11 @@ export const NameEntryScreen: React.FC<NameEntryScreenProps> = ({ onComplete }) 
               <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 text-center space-y-2">
                 <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
                   <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
-                  <span>Made By <span className="font-bold text-blue-600">Vipul</span></span>
+                  <span>{t('footer.madeBy')} <span className="font-bold text-blue-600">Vipul</span></span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-xs text-gray-600">
                   <div className="w-1.5 h-1.5 bg-purple-500 rounded-full"></div>
-                  <span>Idea By <span className="font-bold text-purple-600">AS</span></span>
+                  <span>{t('footer.ideaBy')} <span className="font-bold text-purple-600">AS</span></span>
                 </div>
               </div>
             </div>

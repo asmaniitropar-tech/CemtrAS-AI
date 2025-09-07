@@ -1,7 +1,9 @@
 import React from 'react';
 import { Menu, X, User, Moon, Sun } from 'lucide-react';
+import { LanguageSelector } from './LanguageSelector';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
+import { useI18n } from '../hooks/useI18n';
 import type { UserRole } from '../types';
 
 interface HeaderProps {
@@ -13,6 +15,7 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, selectedRole }) => {
   const { user, isAuthenticated } = useAuth();
   const { isDarkMode, toggleDarkMode } = useTheme();
+  const { t } = useI18n();
 
   return (
     <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-b border-gray-200/50 dark:border-gray-700/50 p-3 md:p-4 shadow-lg flex-shrink-0 relative z-20">
@@ -56,11 +59,14 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
 
         {/* Right Section - Controls */}
         <div className="flex items-center gap-2">
+          {/* Language Selector */}
+          <LanguageSelector compact />
+          
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleDarkMode}
             className="p-2 hover:bg-gray-100/80 dark:hover:bg-gray-800/80 rounded-lg transition-all duration-200 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50"
-            title={isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            title={isDarkMode ? t('accessibility.switchToLight') : t('accessibility.switchToDark')}
           >
             {isDarkMode ? (
               <Sun className="text-yellow-500 w-4 h-4" />
@@ -74,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({ sidebarOpen, setSidebarOpen, sel
             <div className="hidden md:flex items-center gap-2 px-2 py-1 bg-green-100/80 dark:bg-green-900/30 rounded-lg border border-green-200/50 dark:border-green-800/50 backdrop-blur-sm">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <span className="text-xs font-bold text-green-700 dark:text-green-400">
-                Online
+                {t('auth.onlineStatus')}
               </span>
             </div>
 

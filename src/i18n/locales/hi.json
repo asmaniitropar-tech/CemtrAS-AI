@@ -1,0 +1,107 @@
+{
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "retry": "पुनः प्रयास करें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "close": "बंद करें",
+    "back": "वापस",
+    "next": "अगला",
+    "previous": "पिछला",
+    "search": "खोजें",
+    "filter": "फ़िल्टर",
+    "sort": "क्रमबद्ध करें",
+    "export": "निर्यात",
+    "import": "आयात",
+    "settings": "सेटिंग्स",
+    "help": "सहायता",
+    "about": "के बारे में",
+    "contact": "संपर्क",
+    "privacy": "गोपनीयता नीति",
+    "terms": "सेवा की शर्तें"
+  },
+  "auth": {
+    "welcome": "CemtrAS AI में आपका स्वागत है",
+    "enterName": "अपना नाम दर्ज करें",
+    "nameRequired": "नाम आवश्यक है",
+    "nameMinLength": "नाम कम से कम 2 अक्षर का होना चाहिए",
+    "getStarted": "शुरू करें",
+    "logout": "लॉग आउट",
+    "confirmLogout": "क्या आप वाकई लॉग आउट करना चाहते हैं?",
+    "premiumAccess": "प्रीमियम एक्सेस",
+    "onlineStatus": "ऑनलाइन"
+  },
+  "chat": {
+    "newChat": "नई चैट",
+    "chatHistory": "चैट इतिहास",
+    "noChats": "अभी तक कोई चैट नहीं",
+    "startConversation": "अपनी चैट यहाँ देखने के लिए बातचीत शुरू करें",
+    "typeMessage": "अपना संदेश टाइप करें...",
+    "sendMessage": "संदेश भेजें",
+    "voiceInput": "आवाज़ इनपुट",
+    "stopRecording": "रिकॉर्डिंग बंद करें",
+    "uploadFiles": "फ़ाइलें अपलोड करें",
+    "analyzing": "CemtrAS AI आपकी क्वेरी का विश्लेषण कर रहा है...",
+    "processing": "प्रसंस्करण...",
+    "ready": "तैयार",
+    "messages": "संदेश",
+    "status": "स्थिति",
+    "expertise": "विशेषज्ञता चुनें",
+    "currentExpertise": "वर्तमान विशेषज्ञता",
+    "expertiseAreas": "उपलब्ध विशेषज्ञता क्षेत्र"
+  },
+  "roles": {
+    "operations": "संचालन और रखरखाव",
+    "projectManagement": "परियोजना प्रबंधन",
+    "salesMarketing": "बिक्री और विपणन",
+    "procurement": "खरीद और आपूर्ति श्रृंखला",
+    "erectionCommissioning": "स्थापना और कमीशनिंग",
+    "engineeringDesign": "इंजीनियरिंग और डिज़ाइन",
+    "generalAI": "सामान्य AI सहायक"
+  },
+  "roleDescriptions": {
+    "operations": "मशीनरी समस्या निवारण और प्रक्रिया अनुकूलन",
+    "projectManagement": "EPC शेड्यूलिंग और संसाधन योजना",
+    "salesMarketing": "बाज़ार विश्लेषण और ग्राहक रणनीतियाँ",
+    "procurement": "विक्रेता बातचीत और इन्वेंटरी अनुकूलन",
+    "erectionCommissioning": "स्थापना अनुक्रम और सुरक्षा अनुपालन",
+    "engineeringDesign": "प्रक्रिया प्रवाह डिज़ाइन और उपकरण चयन",
+    "generalAI": "किसी भी प्रश्न के लिए सामान्य प्रयोजन AI"
+  },
+  "features": {
+    "aiAssistant": "सामान्य AI सहायक",
+    "fileUpload": "फ़ाइल अपलोड समर्थन",
+    "chatHistory": "चैट इतिहास और सत्र",
+    "expertAreas": "सभी विशेषज्ञ क्षेत्र",
+    "instantAccess": "आपको तुरंत पहुंच मिलेगी:",
+    "readyToStart": "शुरू करने के लिए तैयार हैं?",
+    "askAnything": "सीमेंट प्लांट संचालन के बारे में मुझसे कुछ भी पूछें, और मैं आपकी आवश्यकताओं के अनुकूल विशेषज्ञ मार्गदर्शन प्रदान करूंगा।",
+    "startTyping": "नीचे टाइप करना शुरू करें"
+  },
+  "errors": {
+    "systemError": "सिस्टम त्रुटि",
+    "apiKeyMissing": "GEMINI_API_KEY कॉन्फ़िगर नहीं है। कृपया अपने पर्यावरण चर में VITE_GEMINI_API_KEY सेट करें।",
+    "quotaExceeded": "API कोटा पार हो गया। कृपया बाद में पुनः प्रयास करें या अपनी बिलिंग सेटिंग्स जांचें।",
+    "contentBlocked": "सामग्री को सुरक्षा फ़िल्टर द्वारा अवरुद्ध किया गया था। कृपया अपना प्रश्न दोबारा लिखें।",
+    "technicalError": "तकनीकी सिस्टम त्रुटि हुई। कृपया पुनः प्रयास करें या सहायता से संपर्क करें।",
+    "authFailed": "प्रमाणीकरण विफल। कृपया पुनः प्रयास करें।",
+    "networkError": "नेटवर्क त्रुटि। कृपया अपना कनेक्शन जांचें और पुनः प्रयास करें।"
+  },
+  "footer": {
+    "madeBy": "निर्माता",
+    "ideaBy": "विचार",
+    "poweredBy": "द्वारा संचालित",
+    "copyright": "© 2025 CemtrAS AI",
+    "company": "TrackAS Technology"
+  },
+  "accessibility": {
+    "toggleSidebar": "साइडबार टॉगल करें",
+    "toggleDarkMode": "डार्क मोड टॉगल करें",
+    "userMenu": "उपयोगकर्ता मेनू",
+    "languageSelector": "भाषा चयनकर्ता",
+    "closeModal": "मॉडल बंद करें"
+  }
+}

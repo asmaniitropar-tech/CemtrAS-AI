@@ -1,0 +1,107 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "export": "Export",
+    "import": "Import",
+    "settings": "Settings",
+    "help": "Help",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "auth": {
+    "welcome": "Welcome to CemtrAS AI",
+    "enterName": "Enter your name",
+    "nameRequired": "Name is required",
+    "nameMinLength": "Name must be at least 2 characters",
+    "getStarted": "Get Started",
+    "logout": "Logout",
+    "confirmLogout": "Are you sure you want to logout?",
+    "premiumAccess": "Premium Access",
+    "onlineStatus": "Online"
+  },
+  "chat": {
+    "newChat": "New Chat",
+    "chatHistory": "Chat History",
+    "noChats": "No chats yet",
+    "startConversation": "Start a conversation to see your chats here",
+    "typeMessage": "Type your message...",
+    "sendMessage": "Send message",
+    "voiceInput": "Voice input",
+    "stopRecording": "Stop recording",
+    "uploadFiles": "Upload files",
+    "analyzing": "CemtrAS AI is analyzing your query...",
+    "processing": "Processing...",
+    "ready": "Ready",
+    "messages": "Messages",
+    "status": "Status",
+    "expertise": "Select Expertise",
+    "currentExpertise": "Current Expertise",
+    "expertiseAreas": "Available Expertise Areas"
+  },
+  "roles": {
+    "operations": "Operations & Maintenance",
+    "projectManagement": "Project Management",
+    "salesMarketing": "Sales & Marketing",
+    "procurement": "Procurement & Supply Chain",
+    "erectionCommissioning": "Erection & Commissioning",
+    "engineeringDesign": "Engineering & Design",
+    "generalAI": "General AI Assistant"
+  },
+  "roleDescriptions": {
+    "operations": "Machinery troubleshooting & process optimization",
+    "projectManagement": "EPC scheduling & resource planning",
+    "salesMarketing": "Market analysis & customer strategies",
+    "procurement": "Vendor negotiations & inventory optimization",
+    "erectionCommissioning": "Installation sequencing & safety compliance",
+    "engineeringDesign": "Process flow design & equipment selection",
+    "generalAI": "General purpose AI for any questions"
+  },
+  "features": {
+    "aiAssistant": "General AI Assistant",
+    "fileUpload": "File Upload Support",
+    "chatHistory": "Chat History & Sessions",
+    "expertAreas": "All Expert Areas",
+    "instantAccess": "You'll get instant access to:",
+    "readyToStart": "Ready to Get Started?",
+    "askAnything": "Ask me anything about cement plant operations, and I'll provide expert guidance tailored to your needs.",
+    "startTyping": "Start typing below"
+  },
+  "errors": {
+    "systemError": "System Error",
+    "apiKeyMissing": "GEMINI_API_KEY is not configured. Please set VITE_GEMINI_API_KEY in your environment variables.",
+    "quotaExceeded": "API quota exceeded. Please try again later or check your billing settings.",
+    "contentBlocked": "Content was blocked by safety filters. Please rephrase your question.",
+    "technicalError": "Technical system error occurred. Please try again or contact support.",
+    "authFailed": "Authentication failed. Please try again.",
+    "networkError": "Network error. Please check your connection and try again."
+  },
+  "footer": {
+    "madeBy": "Made By",
+    "ideaBy": "Idea By",
+    "poweredBy": "Powered by",
+    "copyright": "© 2025 CemtrAS AI",
+    "company": "TrackAS Technology"
+  },
+  "accessibility": {
+    "toggleSidebar": "Toggle sidebar",
+    "toggleDarkMode": "Toggle dark mode",
+    "userMenu": "User menu",
+    "languageSelector": "Language selector",
+    "closeModal": "Close modal"
+  }
+}

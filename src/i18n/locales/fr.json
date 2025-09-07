@@ -1,0 +1,107 @@
+{
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "retry": "Réessayer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "close": "Fermer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "export": "Exporter",
+    "import": "Importer",
+    "settings": "Paramètres",
+    "help": "Aide",
+    "about": "À propos",
+    "contact": "Contact",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  },
+  "auth": {
+    "welcome": "Bienvenue sur CemtrAS AI",
+    "enterName": "Entrez votre nom",
+    "nameRequired": "Le nom est requis",
+    "nameMinLength": "Le nom doit contenir au moins 2 caractères",
+    "getStarted": "Commencer",
+    "logout": "Se Déconnecter",
+    "confirmLogout": "Êtes-vous sûr de vouloir vous déconnecter ?",
+    "premiumAccess": "Accès Premium",
+    "onlineStatus": "En Ligne"
+  },
+  "chat": {
+    "newChat": "Nouveau Chat",
+    "chatHistory": "Historique des Chats",
+    "noChats": "Aucun chat pour le moment",
+    "startConversation": "Commencez une conversation pour voir vos chats ici",
+    "typeMessage": "Tapez votre message...",
+    "sendMessage": "Envoyer le message",
+    "voiceInput": "Entrée vocale",
+    "stopRecording": "Arrêter l'enregistrement",
+    "uploadFiles": "Télécharger des fichiers",
+    "analyzing": "CemtrAS AI analyse votre requête...",
+    "processing": "Traitement en cours...",
+    "ready": "Prêt",
+    "messages": "Messages",
+    "status": "Statut",
+    "expertise": "Sélectionner l'Expertise",
+    "currentExpertise": "Expertise Actuelle",
+    "expertiseAreas": "Domaines d'Expertise Disponibles"
+  },
+  "roles": {
+    "operations": "Opérations et Maintenance",
+    "projectManagement": "Gestion de Projet",
+    "salesMarketing": "Ventes et Marketing",
+    "procurement": "Achats et Chaîne d'Approvisionnement",
+    "erectionCommissioning": "Montage et Mise en Service",
+    "engineeringDesign": "Ingénierie et Conception",
+    "generalAI": "Assistant IA Général"
+  },
+  "roleDescriptions": {
+    "operations": "Dépannage de machines et optimisation des processus",
+    "projectManagement": "Planification EPC et planification des ressources",
+    "salesMarketing": "Analyse de marché et stratégies clients",
+    "procurement": "Négociations fournisseurs et optimisation des stocks",
+    "erectionCommissioning": "Séquençage d'installation et conformité sécurité",
+    "engineeringDesign": "Conception de flux de processus et sélection d'équipements",
+    "generalAI": "IA généraliste pour toutes questions"
+  },
+  "features": {
+    "aiAssistant": "Assistant IA Général",
+    "fileUpload": "Support de Téléchargement de Fichiers",
+    "chatHistory": "Historique des Chats et Sessions",
+    "expertAreas": "Tous les Domaines d'Expertise",
+    "instantAccess": "Vous obtiendrez un accès instantané à :",
+    "readyToStart": "Prêt à Commencer ?",
+    "askAnything": "Demandez-moi n'importe quoi sur les opérations d'usines de ciment, et je vous fournirai des conseils d'expert adaptés à vos besoins.",
+    "startTyping": "Commencez à taper ci-dessous"
+  },
+  "errors": {
+    "systemError": "Erreur Système",
+    "apiKeyMissing": "GEMINI_API_KEY n'est pas configuré. Veuillez définir VITE_GEMINI_API_KEY dans vos variables d'environnement.",
+    "quotaExceeded": "Quota API dépassé. Veuillez réessayer plus tard ou vérifier vos paramètres de facturation.",
+    "contentBlocked": "Le contenu a été bloqué par les filtres de sécurité. Veuillez reformuler votre question.",
+    "technicalError": "Une erreur technique système s'est produite. Veuillez réessayer ou contacter le support.",
+    "authFailed": "Échec de l'authentification. Veuillez réessayer.",
+    "networkError": "Erreur réseau. Veuillez vérifier votre connexion et réessayer."
+  },
+  "footer": {
+    "madeBy": "Créé Par",
+    "ideaBy": "Idée Par",
+    "poweredBy": "Propulsé par",
+    "copyright": "© 2025 CemtrAS AI",
+    "company": "TrackAS Technology"
+  },
+  "accessibility": {
+    "toggleSidebar": "Basculer la barre latérale",
+    "toggleDarkMode": "Basculer le mode sombre",
+    "userMenu": "Menu utilisateur",
+    "languageSelector": "Sélecteur de langue",
+    "closeModal": "Fermer la modal"
+  }
+}
